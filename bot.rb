@@ -26,5 +26,6 @@ client.search("pope", search_options).take(50).each do |tweet|
   puts "#{tweet.user.screen_name}: #{tweet.text}"
  client.favorite(tweet) # we favorite the tweet
  #then we reply
- client.update("@{tweet.user.screen_name} Welcome to Philadelphia!")
+ client.update("@{tweet.user.screen_name} Welcome to Philadelphia!", in_reply_to_status_id: tweet.id)
 end
+
